@@ -44,7 +44,7 @@ void floyd_warshal(int n)
         {
             for(int j=0;j<n;j++)
             {
-                if(sol[i][j]<sol[i][k]+sol[k][j])
+                if(sol[i][j]>sol[i][k]+sol[k][j])
                 {
                     sol[i][j]=sol[i][k]+sol[k][j];
                 }
