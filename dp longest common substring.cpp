@@ -26,12 +26,12 @@ typedef pair<int,int> pi;
 typedef vector < vector<int> >  vii; 
 
 
-int LCSuff(string x,string y)
+string LCSuff(string x,string y)
 {
     int m=x.size();
     int n=y.size();
     int lcs[m+1][n+1];
-    int result=0;
+    int res=0 ,row =0 ,col=0;
     for(int i=0;i<=m;i++)
     {
         for(int j=0;j<=n;j++)
@@ -43,13 +43,29 @@ int LCSuff(string x,string y)
             else if(x[i-1]==y[j-1])
             {
                 lcs[i][j]=lcs[i-1][j-1]+1;
-                result=max(result,lcs[i][j]);
+                if(res< lcs[i][j])
+                {
+                    res=lcs[i][j];
+                    row=i;
+                    col=j;
+                }
             }
             else
                     lcs[i][j]=0;
         }
     }
-    return result;
+
+    string longest="";
+    while(lcs[row][col]>0)
+    {
+        longest+=x[row-1];
+        row--;
+        col--;
+    }
+    reverse(longest.begin(),longest.end());
+
+  
+    return longest;
 }
 
 int main()
@@ -61,6 +77,7 @@ int main()
     {
         string a,b;
         cin>>a>>b;
-        cout<<LCSuff(a,b);
+        string ans=LCSuff(a,b);
+        cout<<ans.size()<<" "<<ans<<endl;
     }
 }
