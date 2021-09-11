@@ -1,4 +1,16 @@
-#include <bits/stdc++.h>
+// g++ -Wextra -std=c++17 -o ../OUT/a.out template.cpp && ./a.out
+#include <iostream>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <unordered_set>
+#include <bitset>
+
 using namespace std;
 
 #define rep(i, n, m) for (int i = n; i < m; i++)
@@ -20,22 +32,22 @@ using namespace std;
 #define popll(head) dp_delete_first(&head)
 #define eol cout << "\n"
 #define N 1000000
-#define int long long
 
 typedef long long ll;
 
 void solve()
 {
-
+    vector <string> losta;
 }
 
 signed main()
 {
     ios 
-    // int T = 1;
-    // cin >> T;
+    int T = 1;
+    cin >> T;
     while (T--)
     {
+        cout<<"hello";
         solve();
     }
 }
