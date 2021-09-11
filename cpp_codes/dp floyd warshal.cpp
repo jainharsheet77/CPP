@@ -18,7 +18,7 @@ using namespace std;
 #define popll(head) dp_delete_first(&head)
 #define eol cout<<"\n"
 #define N 1000000
-#define INF 10000000
+
 typedef set<int> si;
 typedef long long ll;
 typedef vector<int> vi;
@@ -51,24 +51,13 @@ void floyd_warshal(int n)
             }
         }
     }
-    for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<n;j++)
-        {
-            if(sol[i][j]>=INF)
-                cout<<"INF ";
-            else
-            cout<<sol[i][j]<<" ";
-        }
-        cout<<endl;
-    }
 }
 
 int main()
 {   
     ios
     int T=1;
-    cin>>T;
+    //cin>>T;
     while(T--)
     {
         int n;
@@ -83,9 +72,6 @@ int main()
                 
                 int t;
                 cin>>t;
-                if(t>=INF)
-                graph[i][j]=INF;
-                else
                 graph[i][j]=t;
             }
         }

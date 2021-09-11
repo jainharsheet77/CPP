@@ -76,6 +76,34 @@ string LCSuff(string x,string y)
     return longest;
 }
 
+string LCSuff(string a,string b,string c)
+{
+    int n=a.size();
+    int m=b.size();
+    int o=c.size();
+    int dp[n+1][m+1][o+1];
+    for(int i=0;i<=n;i++)
+    {
+        for(int j=0;j<=m;j++)
+        {
+            for(int k=0;k<=o;k++)
+            {
+                if(i==0||j==0||k==0)
+                    dp[i][j][k]=0;
+                else if(a[i-1]==b[j-1]==c[k-1])
+                {
+                    dp[i][j][k]=dp[i-1][j-1][k-1];
+                }
+                else
+                {
+                    dp[i][j][k]=max(max( dp[i-1][j][k],dp[i][j-1][k]),dp[i][j][k-1]);
+                }
+            }
+        }
+    }
+    return dp[n][m][o];
+}
+
 int main()
 {   
     ios
